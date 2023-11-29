@@ -4,7 +4,7 @@
 #include "framework.h"
 #include "Win32Application.h"
 
-int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE, LPWSTR, int nCmdShow)
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, LPWSTR, int nCmdShow)
 {
     return Win32Application::Run(hInstance, nCmdShow);
 }
