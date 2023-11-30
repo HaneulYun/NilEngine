@@ -1,5 +1,8 @@
 #include "framework.h"
 #include "Win32Application.h"
+#include "Renderer.h"
+
+HWND Win32Application::m_hwnd = nullptr;
 
 int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
 {
@@ -14,11 +17,13 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
     RegisterClassEx(&windowClass);
 
     // Create the window and store a handle to it.
-    HWND hWnd = CreateWindowW(windowClass.lpszClassName, L"NilWindows", WS_OVERLAPPEDWINDOW,
+    m_hwnd = CreateWindowW(windowClass.lpszClassName, L"NilWindows", WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
-    ShowWindow(hWnd, nCmdShow);
- 
+    ShowWindow(m_hwnd, nCmdShow);
+
+    Renderer::ShowDirectX12();
+
     // Main sample loop.
     MSG msg = {};
     while(msg.message != WM_QUIT)
