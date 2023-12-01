@@ -22,7 +22,8 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
 
     ShowWindow(m_hwnd, nCmdShow);
 
-    Renderer::ShowDirectX12();
+    Renderer renderer;
+    renderer.Initialize();
 
     // Main sample loop.
     MSG msg = {};
@@ -34,6 +35,7 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
             TranslateMessage(&msg);
             DispatchMessage(&msg);
         }
+        renderer.Render();
     }
 
     // Return this part of the WM_QUIT message to Windows.
