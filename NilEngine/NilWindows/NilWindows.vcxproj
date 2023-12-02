@@ -76,6 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\imgui;..\..\imgui\backends;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -91,6 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\imgui;..\..\imgui\backends;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -106,6 +108,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\imgui;..\..\imgui\backends;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -121,6 +124,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\imgui;..\..\imgui\backends;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -131,11 +135,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\imgui\backends\imgui_impl_dx12.h" />
+    <ClInclude Include="..\..\imgui\backends\imgui_impl_win32.h" />
+    <ClInclude Include="..\..\imgui\imconfig.h" />
+    <ClInclude Include="..\..\imgui\imgui.h" />
+    <ClInclude Include="..\..\imgui\imgui_internal.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Win32Application.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\imgui\backends\imgui_impl_dx12.cpp" />
+    <ClCompile Include="..\..\imgui\backends\imgui_impl_win32.cpp" />
+    <ClCompile Include="..\..\imgui\imgui.cpp" />
+    <ClCompile Include="..\..\imgui\imgui_demo.cpp" />
+    <ClCompile Include="..\..\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\..\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\..\imgui\imgui_widgets.cpp" />
     <ClCompile Include="NilWindows.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Win32Application.cpp" />

@@ -9,6 +9,12 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="imgui_backend">
+      <UniqueIdentifier>{e13f3992-c0da-4a52-87c3-1ddc9e69da35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui_core">
+      <UniqueIdentifier>{50dd1360-2b27-40e0-8970-09242fe5da1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -20,6 +26,21 @@
     <ClInclude Include="Renderer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\imgui\imconfig.h">
+      <Filter>imgui_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\imgui\imgui.h">
+      <Filter>imgui_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\imgui\imgui_internal.h">
+      <Filter>imgui_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\imgui\backends\imgui_impl_dx12.h">
+      <Filter>imgui_backend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\imgui\backends\imgui_impl_win32.h">
+      <Filter>imgui_backend</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NilWindows.cpp">
@@ -30,6 +51,27 @@
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\imgui\imgui.cpp">
+      <Filter>imgui_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\imgui\imgui_demo.cpp">
+      <Filter>imgui_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\imgui\imgui_draw.cpp">
+      <Filter>imgui_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\imgui\imgui_tables.cpp">
+      <Filter>imgui_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\imgui\imgui_widgets.cpp">
+      <Filter>imgui_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\imgui\backends\imgui_impl_dx12.cpp">
+      <Filter>imgui_backend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\imgui\backends\imgui_impl_win32.cpp">
+      <Filter>imgui_backend</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
