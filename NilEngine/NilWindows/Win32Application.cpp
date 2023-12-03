@@ -27,16 +27,23 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
 
     // Main sample loop.
     MSG msg = {};
-    while(msg.message != WM_QUIT)
+    bool done = false;
+    while(!done)
     {
         // Process any messages in the queue.
-        if(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+        while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
         {
             TranslateMessage(&msg);
             DispatchMessage(&msg);
+            if (msg.message == WM_QUIT)
+                done = true;
         }
+        if (done)
+            break;
         renderer.Render();
     }
+
+    renderer.Destroy();
 
     // Return this part of the WM_QUIT message to Windows.
     return static_cast<char>(msg.wParam);
@@ -52,9 +59,6 @@ LRESULT CALLBACK Win32Application::WindowProc(HWND hWnd, UINT message, WPARAM wP
 
     switch (message)
     {
-    case WM_PAINT:
-        return 0;
-
     case WM_DESTROY:
         PostQuitMessage(0);
         return 0;
