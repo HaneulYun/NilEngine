@@ -8,13 +8,22 @@ public:
 	void Render();
 
 private:
+	struct Vertex
+	{
+		XMFLOAT3 position;
+		XMFLOAT4 color;
+	};
+
 	static const UINT FrameCount = 2U;
 
+	D3D12_VIEWPORT viewport;
+	D3D12_RECT scissorRect;
 	ComPtr<IDXGISwapChain3> swapChain;
 	ComPtr<ID3D12Resource> renderTargets[FrameCount];
 
 	ComPtr<ID3D12CommandAllocator> commandAllocator;
 	ComPtr<ID3D12CommandQueue> commandQueue;
+	ComPtr<ID3D12RootSignature> rootSignature;
 	ComPtr<ID3D12DescriptorHeap> rtvHeap;
 	ComPtr<ID3D12DescriptorHeap> srvHeap;
 	ComPtr<ID3D12PipelineState> pipelineState;
@@ -25,4 +34,7 @@ private:
 	HANDLE fenceEvent;
 	ComPtr<ID3D12Fence> fence;
 	UINT fenceValue;
+
+	ComPtr<ID3D12Resource> vertexBuffer;
+	D3D12_VERTEX_BUFFER_VIEW vertexBufferView;
 };
