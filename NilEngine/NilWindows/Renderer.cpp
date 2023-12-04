@@ -208,7 +208,7 @@ void Renderer::Render()
     ImGui_ImplDX12_NewFrame();
     ImGui_ImplWin32_NewFrame();
     ImGui::NewFrame();
-    //ImGui::DockSpaceOverViewport();
+    ImGui::DockSpaceOverViewport(0, ImGuiDockNodeFlags_PassthruCentralNode);
 
     {
         ImGui::Begin("Hello, world!");
