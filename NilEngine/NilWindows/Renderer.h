@@ -7,7 +7,13 @@ public:
 	void Destroy();
 	void Render();
 
+	UINT GetWidth() const { return width; }
+	UINT GetHeight() const { return height; }
+
 private:
+	UINT width{ 1920 };
+	UINT height{ 1080 };
+
 	struct Vertex
 	{
 		XMFLOAT3 position;

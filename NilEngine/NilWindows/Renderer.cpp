@@ -4,12 +4,8 @@
 
 void Renderer::Initialize()
 {
-    RECT rt;
-    GetWindowRect(Win32Application::GetHwnd(), &rt);
-    int w = rt.right - rt.left;
-    int h = rt.bottom - rt.top;
-    viewport = { 0, 0, (float)w, (float)h };
-    scissorRect = { 0, 0, w, h };
+    viewport = { 0, 0, (float)width, (float)height };
+    scissorRect = { 0, 0, (long)width, (long)height };
 
 
     UINT dxgiFactoryFlags = 0;

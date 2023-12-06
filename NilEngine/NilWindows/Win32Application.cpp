@@ -16,13 +16,14 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
     windowClass.lpszClassName = L"NILWINDOWS";
     RegisterClassEx(&windowClass);
 
+    Renderer renderer;
+
     // Create the window and store a handle to it.
     m_hwnd = CreateWindowW(windowClass.lpszClassName, L"NilWindows", WS_OVERLAPPEDWINDOW,
-        CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+        CW_USEDEFAULT, 0, renderer.GetWidth(), renderer.GetHeight(), nullptr, nullptr, hInstance, nullptr);
 
     ShowWindow(m_hwnd, nCmdShow);
 
-    Renderer renderer;
     renderer.Initialize();
 
     // Main sample loop.
@@ -37,7 +38,7 @@ int Win32Application::Run(HINSTANCE hInstance, int nCmdShow)
             DispatchMessage(&msg);
             if (msg.message == WM_QUIT)
                 done = true;
-        }
+         }
         if (done)
             break;
         renderer.Render();
